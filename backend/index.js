@@ -3,11 +3,10 @@ const connectToMongo =require('./db')
 const express = require('express')
 connectToMongo( ) // this function is comeing from db.js 
 
-
-
 const app = express()
 const port = 3000
 
+app.use(express.json());
 
 // avaliable routes 
 app.use('/api/auth',require('./routes/auth'))
