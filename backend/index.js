@@ -8,9 +8,10 @@ connectToMongo( ) // this function is comeing from db.js
 const app = express()
 const port = 3000
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+
+// avaliable routes 
+app.use('/api/auth',require('./routes/auth'))
+app.use('/api/notes',require('./routes/notes'))
 
 
 app.listen(port, () => {
